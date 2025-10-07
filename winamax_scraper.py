@@ -23,12 +23,12 @@ for i in range (1,100):
     
 
     # Récupérer les données depuis l'URL
-    response = requests.get(url, headers=headers, cookies=cookies) # Fixed the condition to check if the response text is not None
+    response = requests.get(url, headers=headers, cookies=cookies)
     html = response.text
     soup = BeautifulSoup(html, "html.parser")
     table = soup.find("table")
     if table:
-        rows = table.find_all("tr")[1:]  # On ignore la première ligne si c'est l'en-tête
+        rows = table.find_all("tr")[1:] 
         page_data = []
 
         data = []
